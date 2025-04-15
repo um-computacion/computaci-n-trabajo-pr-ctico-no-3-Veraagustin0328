@@ -1,6 +1,7 @@
 import unittest
-from src.exceptions import NumeroDebeSerPositivo
 from src.calculo_numeros import ingrese_numero
+from src.exceptions import NumeroDebeSerPositivo
+
 from unittest.mock import patch
 
 class TestCalculoNumeros(unittest.TestCase):
@@ -15,14 +16,8 @@ class TestCalculoNumeros(unittest.TestCase):
         with self.assertRaises(NumeroDebeSerPositivo):
             ingrese_numero()
 
-<<<<<<< HEAD
-=======
-    @patch('builtins.input', return_value='AAA')
-    def test_ingreso_letras(self, patch_input):
+    @patch('builtins.input', return_value='abc')
+    def test_input_invalido(self, patch_input):
         with self.assertRaises(ValueError):
             ingrese_numero()
 
-if __name__ == '__main__':
-    unittest.main()
-
->>>>>>> bb2bd44 (Implementación de excepciones y validación)

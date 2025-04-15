@@ -25,4 +25,9 @@ def main():
         except NumeroDebeSerPositivo as e:
             print(f"Error: {e}")
         except KeyboardInterrupt:
+            print("\nPrograma finalizado.")
+            break
+
+if __name__ == "__main__":
+    main()
 
