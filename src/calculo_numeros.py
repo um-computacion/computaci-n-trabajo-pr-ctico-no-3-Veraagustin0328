@@ -1,4 +1,16 @@
-from exceptions import ingrese_numero
+from src.exceptions import NumeroDebeSerPositivo
+
+def ingrese_numero():
+    entrada = input("Ingrese un número: ")
+    try:
+        numero = int(entrada)
+    except ValueError:
+        raise ValueError("La entrada debe ser un número válido")
+
+    if numero < 0:
+        raise NumeroDebeSerPositivo("El número debe ser positivo")
+
+    return numero
 
 def main():
     """
@@ -13,8 +25,4 @@ def main():
         except NumeroDebeSerPositivo as e:
             print(f"Error: {e}")
         except KeyboardInterrupt:
-            print("\nPrograma finalizado.")
-            break
 
-if __name__ == "__main__":
-    main() 
